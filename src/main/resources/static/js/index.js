@@ -1,13 +1,4 @@
 ADVERBS = function () {
-  let word1 = "widerlich";
-  let word2 = "anpassbar";
-  let word3 = "angebracht";
-  let word4 = "hinsichtlich";
-  let word5 = "bescheuert";
-  let history = [];
-
-  let answers = [word1, word2, word3, word4, word5];
-
   let blank = "______";
 
   const URL = 'https://deutsch-lernen-api.herokuapp.com/myendpoint';
@@ -34,13 +25,11 @@ ADVERBS = function () {
   }
 
   let questions = apiResult.map(result => createQuestionFromApiResponse(result));
-
-  // $("#prompt").text(questions[0].prompt);
+  let answers = questions.map(question => question.answer);
 
   $('button').click(function () {
     if ($(this).text() === questions[$(this).data("id")].answer) {
       $("#result").text('Korrekt');
-      history.push($(this).text());
       refreshStage();
       let $score = $("#score");
       let currentScore = $score.text();
@@ -81,7 +70,7 @@ ADVERBS = function () {
     while (answerButtonsAlreadyFilledUp.length !== 3) {
       let nextButtonAnswerId = getRandomInt(3) + 1;
       if (answerButtonsAlreadyFilledUp.indexOf(nextButtonAnswerId) === -1) {
-        let nextAnswerId = getRandomInt(5);
+        let nextAnswerId = getRandomInt(questions.length);
         if (answersUsedSoFar.indexOf(nextAnswerId) === -1) {
           answerButtonsAlreadyFilledUp.push(nextButtonAnswerId);
           answersUsedSoFar.push(nextAnswerId);
