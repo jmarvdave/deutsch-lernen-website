@@ -1,5 +1,13 @@
+html {
+  height: 100vh;
+}
+body {
+  min-height: 100vh;
+}
+
 #main {
+  min-height: 100vh;
   display: flex;
+  align-items: center;
   justify-content: center;
-  width: 100%
 }
