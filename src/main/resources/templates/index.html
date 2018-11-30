@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <title>Getting Started: Serving Web Content</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<div id="main">
+  <div id="stage">
+    <p id="prompt"></p>
+
+    <button id="answer1">
+      box1
+    </button>
+    <button id="answer2">
+      box2
+    </button>
+    <button id="answer3">
+      box3
+    </button>
+
+    <p id="result"></p>
+    <p id="score">0</p>
+  </div>
+</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script th:src="@{/js/index.js}"></script>
+</html><!DOCTYPE html>
