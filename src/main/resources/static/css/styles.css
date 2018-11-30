@@ -2,6 +2,7 @@ html {
   height: 100vh;
 }
 body {
+  font-size: 2vmax;
   min-height: 100vh;
 }
 
